@@ -1,14 +1,21 @@
 {
-  "name": "vue-prevnext-pagination",
+  "name": "vue-pagination-sample",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "test": "jest"
   },
   "dependencies": {
-    "vue": "^2.5.22"
+    "@vue/test-utils": "1.0.0-beta.29",
+    "babel-jest": "24.5.0",
+    "eslint-plugin-jest": "22.4.1",
+    "jest": "24.5.0",
+    "vue": "^2.5.22",
+    "vue-jest": "3.0.4",
+    "vue-template-compiler": "2.6.10"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.4.0",
@@ -22,11 +29,17 @@
   "eslintConfig": {
     "root": true,
     "env": {
-      "node": true
+      "node": true,
+      "jest/globals": true
     },
     "extends": [
       "plugin:vue/essential",
+      "plugin:jest/recommended",
       "eslint:recommended"
+    ],
+    "plugins": [
+      "jest",
+      "import"
     ],
     "rules": {},
     "parserOptions": {
