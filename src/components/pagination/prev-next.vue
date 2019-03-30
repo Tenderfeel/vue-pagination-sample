@@ -3,13 +3,15 @@
     <a
       :href="`?page=${prevPage}`"
       class="prev"
+      ref="prev"
       v-if="currentPage > 1"
       @click.prevent="onPrev"
     >&lt; 前へ</a>
-    <div class="total">ページ {{currentPage}}/{{totalPage}}</div>
+    <div class="total" ref="total">ページ {{currentPage}}/{{totalPage}}</div>
     <a
       :href="`?page=${nextPage}`"
       class="next"
+      ref="next"
       v-if="currentPage < totalPage"
       @click.prevent="onNext"
     >次へ &gt;</a>
